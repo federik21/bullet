@@ -54,19 +54,18 @@ class Board<T>{
 
 class Sight: Board<Bullet> {
     /// This funcion is called to insert a Bullet in your Sight. If the bullet is allocable, returns success with the row. An error, otherwise (it can be an Hit, too.
-    func insert(bullet: Bullet, column: Int) -> Future<Int, Error> {
+    func insert(bullet: Bullet) -> Future<Int, Error> {
         return Future<Int, Error> {[weak self] 🔮 in
             guard let self = self else {
                 return 🔮(.failure(BulletBoardError.genericError))
             }
-            guard column >= 0 && column < self.columns else {
-                return 🔮(.failure(BulletBoardError.unSpawnableException))
-            }
+            let column = self.columnFromBullet(bullet)
             var remainingSteps = bullet.value
             var currentRow = 0
-            while remainingSteps > 0 || !(currentRow == self.columns) {
-                remainingSteps -= 1
+            while remainingSteps > 0 || currentRow < self.columns {
                 if self[currentRow, column] == nil {
+                    remainingSteps -= 1
+                } else {
                     currentRow += 1
                 }
             }
@@ -79,6 +78,21 @@ class Sight: Board<Bullet> {
 
     func clear(row: Int, col: Int) {
         self[row,col] = nil
+    }
+
+    func columnFromBullet(_ bullet: Bullet) -> Int {
+        switch bullet.color {
+        case .red:
+            return 0
+        case .blue:
+            return 1
+        case .green:
+            return 2
+        case .yellow:
+            return 3
+        case .pink:
+            return 4
+        }
     }
 }
 
