@@ -18,10 +18,10 @@ struct Bullet {
     var value: Int
     var star: Bool
 
-    init(color: TokenType, value: Int, star: Bool ) {
+    init(color: TokenType, value: Int, star: Bool? = false ) {
         assert(value >= 0 && value <= 5, "Malformed Token")
         self.value = value
         self.color = color
-        self.star = star
+        self.star = star ?? false
     }
 }

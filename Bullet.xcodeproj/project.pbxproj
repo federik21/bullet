@@ -20,6 +20,7 @@
 		E1CFCF7B270C7461007A21AF /* SightTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CFCF7A270C7461007A21AF /* SightTests.swift */; };
 		E1CFCF7C270C748B007A21AF /* Bullet.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10B9C41270C57A500130B90 /* Bullet.swift */; };
 		E1CFCF7D270C75A0007A21AF /* Sight.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10B9C3E270C571000130B90 /* Sight.swift */; };
+		E1CFCF7F270C7AAF007A21AF /* Bag.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CFCF7E270C7AAF007A21AF /* Bag.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		E10B9C3E270C571000130B90 /* Sight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sight.swift; sourceTree = "<group>"; };
 		E10B9C41270C57A500130B90 /* Bullet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bullet.swift; sourceTree = "<group>"; };
 		E1CFCF7A270C7461007A21AF /* SightTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SightTests.swift; sourceTree = "<group>"; };
+		E1CFCF7E270C7AAF007A21AF /* Bag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bag.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +153,7 @@
 			children = (
 				E10B9C3E270C571000130B90 /* Sight.swift */,
 				E10B9C41270C57A500130B90 /* Bullet.swift */,
+				E1CFCF7E270C7AAF007A21AF /* Bag.swift */,
 			);
 			path = Boardgame;
 			sourceTree = "<group>";
@@ -289,6 +292,7 @@
 				E10B9C0F270C56EF00130B90 /* AppDelegate.swift in Sources */,
 				E10B9C42270C57A500130B90 /* Bullet.swift in Sources */,
 				E10B9C11270C56EF00130B90 /* SceneDelegate.swift in Sources */,
+				E1CFCF7F270C7AAF007A21AF /* Bag.swift in Sources */,
 				E10B9C13270C56EF00130B90 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
