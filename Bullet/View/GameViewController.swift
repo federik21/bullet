@@ -17,7 +17,7 @@ protocol GameView {
     func updateLives(_ livesLeft: Int)
     func updateIntensity(_ currIntensity: Int)
     func roundEnd()
-    func playerDied()
+    func playerDefeated()
     func startNextRound()
 }
 
@@ -114,8 +114,8 @@ class GameViewController: UIViewController, GameView {
         cleanViews()
         let stackView = UIStackView(arrangedSubviews: [intensityLabel, lifeCounterLabel, board, drawButton, nextButton])
         stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.distribution = .equalCentering
-        stackView.alignment = .top
+        stackView.distribution = .equalSpacing
+        stackView.alignment = .fill
         stackView.axis = .vertical
         view.addSubview(stackView)
         view.addConstraints([NSLayoutConstraint(item: stackView,
@@ -172,8 +172,9 @@ class GameViewController: UIViewController, GameView {
         presenter?.userWantsToDraw()
     }
 
-    func playerDied() {
+    func playerDefeated() {
         drawButton.isEnabled = false
+        nextButton.isEnabled = false
     }
 
     func roundEnd() {

@@ -58,6 +58,10 @@ extension GamePresenterImpl: GameEngineDelegate {
         view?.updateIntensity(gameEngine.intensityLevel)
     }
 
+    func enginePlayerDefeted() {
+        view?.playerDefeated()
+    }
+
     func enginePlayerHit() {
         view?.updateLives(gameEngine.player.lives)
     }

@@ -11,6 +11,7 @@ protocol GameEngineDelegate {
     func engineInsertedToken(bullet: BulletResult)
     func engineClearedToken(bullet: BulletResult)
     func enginePlayerHit()
+    func enginePlayerDefeted()
     func engineEndedBag()
     func engineUpdateIntensity()
     func engineReadyForNextRound()
@@ -44,6 +45,9 @@ class GameEngine {
                     if let err = error as? SightError, err == .playerHit {
                         print("Hit!")
                         self.player.lives -= 1
+                        if self.player.lives == 0 {
+                            self.delegate?.enginePlayerDefeted()
+                        }
                         self.delegate?.enginePlayerHit()
                     }
                 }
@@ -61,6 +65,6 @@ class GameEngine {
     }
 
     func increaseIntensity() {
-        
+
     }
 }
