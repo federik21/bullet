@@ -64,16 +64,16 @@ class Sight: Board<Bullet> {
             let column = self.columnFromBullet(bullet)
             var remainingSteps = bullet.value
             var currentRow = 0
-            while remainingSteps > 0 && currentRow < self.columns {
+            while remainingSteps > 0 && currentRow < self.rows {
                 if self[currentRow, column] == nil {
                     remainingSteps -= 1
                 }
                 currentRow += 1
             }
-            guard currentRow < self.columns else {
+            guard remainingSteps == 0 else {
                 return 🔮(.failure(SightError.playerHit))
             }
-            self[currentRow - 1,column] = bullet
+            self[currentRow - 1, column] = bullet
             return 🔮(.success(BulletResult(row: currentRow - 1, col: column, bullet: bullet)))
         }
     }

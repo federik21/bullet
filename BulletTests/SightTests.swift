@@ -24,7 +24,14 @@ class SightTests: XCTestCase {
 
     func testInsert() throws {
         let firstBullet = Bullet(color: .blue, value: 1, star: false)
+        let secondBullet = Bullet(color: .blue, value: 4, star: false)
         sight.insert(bullet: firstBullet).sink(receiveCompletion: { _ in
+            print("completed")
+        },
+        receiveValue: {result in
+            print("inserted at depth: \(result.row + 1)")
+        }).store(in: &cancellables)
+        sight.insert(bullet: secondBullet).sink(receiveCompletion: { _ in
             print("completed")
         },
         receiveValue: {result in
