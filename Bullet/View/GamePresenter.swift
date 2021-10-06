@@ -8,6 +8,9 @@
 /* In a MVP architecture, the presenter acts in the middle between views and models.
  gameEngine is used to interact with model.
  */
+
+import Combine
+
 protocol GamePresenter: AnyObject {
     var gameEngine: GameEngine {get set}
     func getBoardDimension() -> (Int, Int)
@@ -29,6 +32,7 @@ class GamePresenterImpl: GamePresenter {
 
         // TEMP
         userWantsToStart()
+        self.view?.updateLives(gameEngine.player.lives)
     }
 
     func getBoardDimension() -> (Int, Int) {
@@ -47,6 +51,13 @@ class GamePresenterImpl: GamePresenter {
 }
 
 extension GamePresenterImpl: GameEngineDelegate {
+    func enginePlayerHit() {
+        view?.updateLives(gameEngine.player.lives)
+    }
+
+    func engineEndedBag() {
+    }
+
     func engineInsertedToken(bullet: BulletResult) {
         let bulletViewModel = BulletViewModel(bulletResult: bullet)
         view?.insert(bullet: bulletViewModel)

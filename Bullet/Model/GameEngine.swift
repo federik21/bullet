@@ -10,6 +10,8 @@ import Combine
 protocol GameEngineDelegate {
     func engineInsertedToken(bullet: BulletResult)
     func engineClearedToken(bullet: BulletResult)
+    func enginePlayerHit()
+    func engineEndedBag()
 }
 
 class GameEngine {

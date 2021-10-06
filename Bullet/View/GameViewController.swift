@@ -12,6 +12,7 @@ protocol GameView {
     func showGameBoard()
     func insert(bullet: BulletViewModel)
     func clear(bullet: BulletViewModel)
+    func updateLives(_ livesLeft: Int)
 }
 
 class GameViewController: UIViewController, GameView {
@@ -23,6 +24,13 @@ class GameViewController: UIViewController, GameView {
         boardView.translatesAutoresizingMaskIntoConstraints = false
         boardView.backgroundColor = .gray
         return boardView
+    }()
+
+    lazy var lifeCounterLabel: UILabel = {
+        let label = UILabel(frame: .zero)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = ""
+        return label
     }()
 
     lazy var drawButton: UIButton = {
@@ -47,8 +55,34 @@ class GameViewController: UIViewController, GameView {
 
     internal func showGameBoard() {
         cleanViews()
-        view.addSubview(board)
-        view.addSubview(drawButton)
+        let stackView = UIStackView(arrangedSubviews: [lifeCounterLabel, board, drawButton])
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.distribution = .equalCentering
+        stackView.alignment = .top
+        stackView.axis = .vertical
+        view.addSubview(stackView)
+        view.addConstraints([NSLayoutConstraint(item: stackView,
+                                                attribute: .top,
+                                                relatedBy: .equal,
+                                                toItem: view.safeAreaLayoutGuide,
+                                                attribute: .top,
+                                                multiplier: 1.0,
+                                                constant: 0),
+                             NSLayoutConstraint(item: stackView,
+                                                attribute: .centerX,
+                                                relatedBy: .equal,
+                                                toItem: view.safeAreaLayoutGuide,
+                                                attribute: .centerX,
+                                                multiplier: 1.0,
+                                                constant: 0),
+                             NSLayoutConstraint(item: stackView,
+                                                attribute: .centerX,
+                                                relatedBy: .equal,
+                                                toItem: view.safeAreaLayoutGuide,
+                                                attribute: .centerX,
+                                                multiplier: 1.0,
+                                                constant: 0),
+        ])
         board.addConstraint(NSLayoutConstraint(item: board,
                                                attribute: .height,
                                                relatedBy: .equal,
@@ -63,34 +97,6 @@ class GameViewController: UIViewController, GameView {
                                                 attribute: .leading,
                                                 multiplier: 1.0,
                                                 constant: 16),
-                             NSLayoutConstraint(item: board,
-                                                attribute: .top,
-                                                relatedBy: .equal,
-                                                toItem: view.safeAreaLayoutGuide,
-                                                attribute: .top,
-                                                multiplier: 1.0,
-                                                constant: 0),
-                             NSLayoutConstraint(item: board,
-                                                attribute: .centerX,
-                                                relatedBy: .equal,
-                                                toItem: view.safeAreaLayoutGuide,
-                                                attribute: .centerX,
-                                                multiplier: 1.0,
-                                                constant: 0),
-                             NSLayoutConstraint(item: drawButton,
-                                                attribute: .topMargin,
-                                                relatedBy: .equal,
-                                                toItem: board,
-                                                attribute: .bottomMargin,
-                                                multiplier: 1.0,
-                                                constant: 0),
-                             NSLayoutConstraint(item: drawButton,
-                                                attribute: .topMargin,
-                                                relatedBy: .equal,
-                                                toItem: board,
-                                                attribute: .bottomMargin,
-                                                multiplier: 1.0,
-                                                constant: 0),
         ])
     }
 
@@ -102,6 +108,10 @@ class GameViewController: UIViewController, GameView {
         for v in view.subviews {
             v.removeFromSuperview()
         }
+    }
+
+    func updateLives(_ livesLeft: Int) {
+        lifeCounterLabel.text = "LIFE: \(livesLeft)"
     }
 }
 
