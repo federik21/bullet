@@ -5,18 +5,18 @@
 //  Created by Piccirilli Federico on 10/5/21.
 //
 
-struct Bag {
+class Bag {
     private var bullets: [Bullet]
 
     init(bullets: [Bullet]) {
         self.bullets = bullets.shuffled()
     }
 
-    mutating func addBullet(_ bullet: Bullet) {
+    func addBullet(_ bullet: Bullet) {
         self.bullets.append(bullet)
     }
 
-    mutating func drawBullet() -> Bullet? {
+    func drawBullet() -> Bullet? {
         guard bullets.count > 0 else {
             return nil
         }

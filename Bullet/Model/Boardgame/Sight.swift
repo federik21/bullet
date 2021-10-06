@@ -21,10 +21,12 @@ class Board<T>{
     private var positions: [T?]
 
 //   Rows and columns should be changed according to the shared model
-    let rows: Int = 5
-    let columns: Int = 5
+    let rows: Int
+    let columns: Int
 
-    init() {
+    init(rows: Int, columns: Int) {
+        self.rows = rows
+        self.columns = columns
         positions = Array(repeating: nil, count: rows * columns)
     }
 
@@ -53,26 +55,25 @@ class Board<T>{
 }
 
 class Sight: Board<Bullet> {
-    /// This funcion is called to insert a Bullet in your Sight. If the bullet is allocable, returns success with the row. An error, otherwise (it can be an Hit, too.
-    func insert(bullet: Bullet) -> Future<Int, Error> {
-        return Future<Int, Error> {[weak self] 🔮 in
+    func insert(bullet: Bullet) -> Future<BulletResult, Error> {
+        return Future<BulletResult, Error> { [weak self] 🔮 in
             guard let self = self else {
-                return 🔮(.failure(BulletBoardError.genericError))
+                return 🔮(.failure(SightError.genericError))
             }
             let column = self.columnFromBullet(bullet)
             var remainingSteps = bullet.value
             var currentRow = 0
-            while remainingSteps > 0 || currentRow < self.columns {
+            while remainingSteps > 0 && currentRow < self.columns {
                 if self[currentRow, column] == nil {
                     remainingSteps -= 1
-                } else {
-                    currentRow += 1
                 }
+                currentRow += 1
             }
             guard currentRow < self.columns else {
-                return 🔮(.failure(BulletBoardError.playerHit))
+                return 🔮(.failure(SightError.playerHit))
             }
-            return 🔮(.success(currentRow))
+            self[currentRow - 1,column] = bullet
+            return 🔮(.success(BulletResult(row: currentRow - 1, col: column, bullet: bullet)))
         }
     }
 
@@ -80,7 +81,7 @@ class Sight: Board<Bullet> {
         self[row,col] = nil
     }
 
-    func columnFromBullet(_ bullet: Bullet) -> Int {
+    private func columnFromBullet(_ bullet: Bullet) -> Int {
         switch bullet.color {
         case .red:
             return 0
@@ -96,6 +97,12 @@ class Sight: Board<Bullet> {
     }
 }
 
-enum BulletBoardError: Error{
+enum SightError: Error{
     case unSpawnableException, genericError, playerHit
+}
+
+struct BulletResult {
+    var row: Int
+    var col: Int
+    var bullet: Bullet
 }

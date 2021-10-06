@@ -11,7 +11,7 @@ import Combine
 
 class SightTests: XCTestCase {
 
-    var sight: Sight = Sight()
+    var sight: Sight = Sight(rows: 5, columns: 5)
     var cancellables: [AnyCancellable] = []
 
     override func setUpWithError() throws {
@@ -27,8 +27,8 @@ class SightTests: XCTestCase {
         sight.insert(bullet: firstBullet).sink(receiveCompletion: { _ in
             print("completed")
         },
-        receiveValue: {depth in
-            print("inserted at depth: \(depth)")
+        receiveValue: {result in
+            print("inserted at depth: \(result.row + 1)")
         }).store(in: &cancellables)
     }
 
