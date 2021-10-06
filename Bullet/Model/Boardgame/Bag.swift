@@ -27,34 +27,35 @@ class Bag {
     }
 }
 
-struct  GameComponents {
+struct GameComponents {
     struct Bullets {
-        static let center: [Bullet] = [
-            Bullet(color: .red, value: 4),
-            Bullet(color: .red, value: 3),
-            Bullet(color: .red, value: 2),
-            Bullet(color: .red, value: 1),
+        static let center: [Bullet] = {
+            var bag = [Bullet]()
+            bag +=  Array(repeating: Bullet(color: .red, value: 4), count: 10)
+            bag +=  Array(repeating: Bullet(color: .red, value: 3), count: 10)
+            bag +=  Array(repeating: Bullet(color: .red, value: 2), count: 10)
+            bag +=  Array(repeating: Bullet(color: .red, value: 1), count: 10)
 
-            Bullet(color: .blue, value: 4),
-            Bullet(color: .blue, value: 3),
-            Bullet(color: .blue, value: 2),
-            Bullet(color: .blue, value: 1),
+            bag +=  Array(repeating: Bullet(color: .blue, value: 4), count: 10)
+            bag +=  Array(repeating: Bullet(color: .blue, value: 3), count: 10)
+            bag +=  Array(repeating: Bullet(color: .blue, value: 2), count: 10)
+            bag +=  Array(repeating: Bullet(color: .blue, value: 1), count: 10)
 
-            Bullet(color: .green, value: 4),
-            Bullet(color: .green, value: 3),
-            Bullet(color: .green, value: 2),
-            Bullet(color: .green, value: 1),
+            bag +=  Array(repeating: Bullet(color: .green, value: 4), count: 10)
+            bag +=  Array(repeating: Bullet(color: .green, value: 3), count: 10)
+            bag +=  Array(repeating: Bullet(color: .green, value: 2), count: 10)
+            bag +=  Array(repeating: Bullet(color: .green, value: 1), count: 10)
 
-            Bullet(color: .yellow, value: 4),
-            Bullet(color: .yellow, value: 3),
-            Bullet(color: .yellow, value: 2),
-            Bullet(color: .yellow, value: 1),
+            bag +=  Array(repeating: Bullet(color: .yellow, value: 4), count: 10)
+            bag +=  Array(repeating: Bullet(color: .yellow, value: 3), count: 10)
+            bag +=  Array(repeating: Bullet(color: .yellow, value: 2), count: 10)
+            bag +=  Array(repeating: Bullet(color: .yellow, value: 1), count: 10)
 
-            Bullet(color: .pink, value: 4),
-            Bullet(color: .pink, value: 3),
-            Bullet(color: .pink, value: 2),
-            Bullet(color: .pink, value: 1),
-        ]
+            bag +=  Array(repeating: Bullet(color: .pink, value: 4), count: 10)
+            bag +=  Array(repeating: Bullet(color: .pink, value: 3), count: 10)
+            bag +=  Array(repeating: Bullet(color: .pink, value: 2), count: 10)
+            bag +=  Array(repeating: Bullet(color: .pink, value: 1), count: 10)
+            return bag
+        }()
     }
-
 }

@@ -17,6 +17,7 @@ protocol GamePresenter: AnyObject {
 
     func userWantsToStart()
     func userWantsToDraw()
+    func userWantsToPlayNextRound()
 }
 
 class GamePresenterImpl: GamePresenter {
@@ -29,10 +30,6 @@ class GamePresenterImpl: GamePresenter {
         self.gameEngine = gameEngine
         self.view?.presenter = self
         gameEngine.delegate = self
-
-        // TEMP
-        userWantsToStart()
-        self.view?.updateLives(gameEngine.player.lives)
     }
 
     func getBoardDimension() -> (Int, Int) {
@@ -43,19 +40,35 @@ class GamePresenterImpl: GamePresenter {
     func userWantsToStart() {
         gameEngine.addPlayer()
         view?.showGameBoard()
+        self.view?.updateLives(gameEngine.player.lives)
+        self.view?.updateIntensity(gameEngine.intensityLevel)
     }
 
     func userWantsToDraw() {
         gameEngine.playerDraws()
     }
+
+    func userWantsToPlayNextRound() {
+        gameEngine.prepareNextRound()
+    }
 }
 
 extension GamePresenterImpl: GameEngineDelegate {
+    func engineUpdateIntensity() {
+        view?.updateIntensity(gameEngine.intensityLevel)
+    }
+
     func enginePlayerHit() {
         view?.updateLives(gameEngine.player.lives)
     }
 
     func engineEndedBag() {
+        view?.roundEnd()
+    }
+
+    func engineReadyForNextRound() {
+        view?.startNextRound()
+        self.view?.updateIntensity(gameEngine.intensityLevel)
     }
 
     func engineInsertedToken(bullet: BulletResult) {

@@ -56,6 +56,7 @@ class Board<T>{
 
 class Sight: Board<Bullet> {
     func insert(bullet: Bullet) -> Future<BulletResult, Error> {
+        print("Inserting \(bullet)")
         return Future<BulletResult, Error> { [weak self] 🔮 in
             guard let self = self else {
                 return 🔮(.failure(SightError.genericError))

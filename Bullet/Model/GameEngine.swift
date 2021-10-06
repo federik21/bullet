@@ -12,6 +12,8 @@ protocol GameEngineDelegate {
     func engineClearedToken(bullet: BulletResult)
     func enginePlayerHit()
     func engineEndedBag()
+    func engineUpdateIntensity()
+    func engineReadyForNextRound()
 }
 
 class GameEngine {
@@ -30,7 +32,7 @@ class GameEngine {
 
     func playerDraws() {
         guard let extractedBullet = player.bag.drawBullet() else {
-            print("Empty Bag!")
+            self.delegate?.engineEndedBag()
             return
         }
         _ = player.sight.insert(bullet: extractedBullet)
@@ -42,10 +44,23 @@ class GameEngine {
                     if let err = error as? SightError, err == .playerHit {
                         print("Hit!")
                         self.player.lives -= 1
+                        self.delegate?.enginePlayerHit()
                     }
                 }
             }, receiveValue: {[weak self] result in
                 self?.delegate?.engineInsertedToken(bullet: result)
             })
+    }
+
+    func prepareNextRound() {
+        for _ in 0...intensityLevel {
+            player.bag.addBullet(center.drawBullet()!)
+        }
+        intensityLevel += 1
+        delegate?.engineReadyForNextRound()
+    }
+
+    func increaseIntensity() {
+        
     }
 }

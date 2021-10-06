@@ -8,7 +8,7 @@ import Combine
 
 class Player {
     var bag: Bag
-    var sight: Sight = Sight(rows: 6, columns: 6)
+    var sight: Sight = Sight(rows: 6, columns: 5)
     var lives: Int = 4
 
     init(center: Bag) {
