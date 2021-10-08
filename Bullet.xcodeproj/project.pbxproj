@@ -17,6 +17,8 @@
 		E10B9C3F270C571000130B90 /* Sight.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10B9C3E270C571000130B90 /* Sight.swift */; };
 		E10B9C42270C57A500130B90 /* Bullet.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10B9C41270C57A500130B90 /* Bullet.swift */; };
 		E143194F270DD5F500A2D947 /* GamePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CFCF87270C8283007A21AF /* GamePresenter.swift */; };
+		E1431953270DE86000A2D947 /* Pattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1431952270DE86000A2D947 /* Pattern.swift */; };
+		E1431955270DF04900A2D947 /* EsfirPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1431954270DF04900A2D947 /* EsfirPattern.swift */; };
 		E1CFCF7B270C7461007A21AF /* SightTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CFCF7A270C7461007A21AF /* SightTests.swift */; };
 		E1CFCF7C270C748B007A21AF /* Bullet.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10B9C41270C57A500130B90 /* Bullet.swift */; };
 		E1CFCF7D270C75A0007A21AF /* Sight.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10B9C3E270C571000130B90 /* Sight.swift */; };
@@ -64,6 +66,8 @@
 		E10B9C32270C56F200130B90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E10B9C3E270C571000130B90 /* Sight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sight.swift; sourceTree = "<group>"; };
 		E10B9C41270C57A500130B90 /* Bullet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bullet.swift; sourceTree = "<group>"; };
+		E1431952270DE86000A2D947 /* Pattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pattern.swift; sourceTree = "<group>"; };
+		E1431954270DF04900A2D947 /* EsfirPattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EsfirPattern.swift; sourceTree = "<group>"; };
 		E1CFCF7A270C7461007A21AF /* SightTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SightTests.swift; sourceTree = "<group>"; };
 		E1CFCF7E270C7AAF007A21AF /* Bag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bag.swift; sourceTree = "<group>"; };
 		E1CFCF83270C8181007A21AF /* BoardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
@@ -168,8 +172,18 @@
 				E10B9C41270C57A500130B90 /* Bullet.swift */,
 				E1CFCF7E270C7AAF007A21AF /* Bag.swift */,
 				E1CFCF8B270C843E007A21AF /* Player.swift */,
+				E1C0D1CC27104775007C0D6C /* Pattern */,
 			);
 			path = Boardgame;
+			sourceTree = "<group>";
+		};
+		E1C0D1CC27104775007C0D6C /* Pattern */ = {
+			isa = PBXGroup;
+			children = (
+				E1431952270DE86000A2D947 /* Pattern.swift */,
+				E1431954270DF04900A2D947 /* EsfirPattern.swift */,
+			);
+			path = Pattern;
 			sourceTree = "<group>";
 		};
 		E1CEEFA3270D817000CCF34E /* Model */ = {
@@ -333,8 +347,10 @@
 				E1CFCF86270C8275007A21AF /* GameViewController.swift in Sources */,
 				E143194F270DD5F500A2D947 /* GamePresenter.swift in Sources */,
 				E10B9C3F270C571000130B90 /* Sight.swift in Sources */,
+				E1431953270DE86000A2D947 /* Pattern.swift in Sources */,
 				E10B9C0F270C56EF00130B90 /* AppDelegate.swift in Sources */,
 				E10B9C42270C57A500130B90 /* Bullet.swift in Sources */,
+				E1431955270DF04900A2D947 /* EsfirPattern.swift in Sources */,
 				E1CFCF84270C8181007A21AF /* BoardView.swift in Sources */,
 				E10B9C11270C56EF00130B90 /* SceneDelegate.swift in Sources */,
 				E1CFCF94270C93E5007A21AF /* BulletViewModel.swift in Sources */,
