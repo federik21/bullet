@@ -6,45 +6,59 @@
 //
 
 enum EsfirPattern {
-    static let fireRage: Pattern = EsfirPattern1()
+    static let first: Pattern = EsfirPattern1()
+    static let second: Pattern = EsfirPattern2()
+    static let third: Pattern = EsfirPattern3()
 }
 
 // rxr
 // ***
-struct EsfirPattern1: Pattern {
+fileprivate struct EsfirPattern1: Pattern {
     var area: Board<PatternSpaceRequirement> = {
         let area = Board<PatternSpaceRequirement>(rows: 2, columns: 3)
-        area[0,0] = PatternSpaceRequirement(bulletType: .red,
-                                            value: nil,
-                                            starred: nil,
-                                            clearAtEnd: false,
-                                            mustBeEmpty: false)
-        area[1,0] = PatternSpaceRequirement(bulletType: .red,
-                                            value: nil,
-                                            starred: nil,
-                                            clearAtEnd: false,
-                                            mustBeEmpty: false)
-        area[2,0] = PatternSpaceRequirement(bulletType: nil,
-                                            value: nil,
-                                            starred: nil,
-                                            clearAtEnd: false,
-                                            mustBeEmpty: true)
-        area[1,0] = PatternSpaceRequirement(bulletType: .red,
-                                            value: nil,
-                                            starred: nil,
-                                            clearAtEnd: true,
-                                            mustBeEmpty: false)
-        area[1,1] = PatternSpaceRequirement(bulletType: nil,
-                                            value: nil,
-                                            starred: nil,
-                                            clearAtEnd: true,
-                                            mustBeEmpty: false)
-        area[1,2] = PatternSpaceRequirement(bulletType: nil,
-                                            value: nil,
-                                            starred: nil,
-                                            clearAtEnd: true,
-                                            mustBeEmpty: false)
+        area[0,0] = PatternSpaceRequirement(bulletType: .red)
+        area[1,0] = PatternSpaceRequirement(mustBeEmpty: true)
+        area[2,0] = PatternSpaceRequirement(bulletType: .red)
+
+        area[1,0] = PatternSpaceRequirement(clearAtEnd: true)
+        area[1,1] = PatternSpaceRequirement(clearAtEnd: true)
+        area[1,2] = PatternSpaceRequirement(clearAtEnd: true)
         return area
     }()
+}
 
+// *--
+// *a-
+// *aa
+fileprivate struct EsfirPattern2: Pattern {
+    var area: Board<PatternSpaceRequirement> = {
+        let area = Board<PatternSpaceRequirement>(rows: 3, columns: 3)
+        area[0,0] = PatternSpaceRequirement(clearAtEnd: true)
+
+        area[1,0] = PatternSpaceRequirement(clearAtEnd: true)
+        area[1,1] = PatternSpaceRequirement(mustBeEmpty: false)
+
+        area[2,0] = PatternSpaceRequirement(clearAtEnd: true)
+        area[2,1] = PatternSpaceRequirement(mustBeEmpty: false)
+        area[2,2] = PatternSpaceRequirement(mustBeEmpty: false)
+        return area
+    }()
+}
+
+
+// axa
+// -*-
+// *-*
+fileprivate struct EsfirPattern3: Pattern {
+    var area: Board<PatternSpaceRequirement> = {
+        let area = Board<PatternSpaceRequirement>(rows: 3, columns: 3)
+        area[0,0] = PatternSpaceRequirement(mustBeEmpty: false)
+        area[1,0] = PatternSpaceRequirement(mustBeEmpty: true)
+        area[2,0] = PatternSpaceRequirement(mustBeEmpty: false)
+
+        area[1,1] = PatternSpaceRequirement(clearAtEnd: true)
+        area[2,0] = PatternSpaceRequirement(clearAtEnd: true)
+        area[2,2] = PatternSpaceRequirement(clearAtEnd: true)
+        return area
+    }()
 }

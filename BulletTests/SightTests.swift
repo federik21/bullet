@@ -29,21 +29,48 @@ class SightTests: XCTestCase {
             print("completed")
         },
         receiveValue: {result in
-            print("inserted at depth: \(result.row + 1)")
+            XCTAssertTrue(result.col == 1)
+            XCTAssertTrue(result.row == 0)
         }).store(in: &cancellables)
         sight.insert(bullet: secondBullet).sink(receiveCompletion: { _ in
             print("completed")
         },
         receiveValue: {result in
-            print("inserted at depth: \(result.row + 1)")
+            XCTAssertTrue(result.col == 1)
+            XCTAssertTrue(result.row == 4)
         }).store(in: &cancellables)
     }
 
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
+    func testPattern() throws {
+        let firstBullet = Bullet(color: .red, value: 1, star: false)
+        sight.insert(bullet: firstBullet).sink(receiveCompletion: { _ in
+            print("completed")
+        },
+        receiveValue: {result in
+            XCTAssertTrue(result.col == 0)
+            XCTAssertTrue(result.row == 0)
+        }).store(in: &cancellables)
+        sight.moveBulletInCoordinates((0,0), direction: .right).sink(receiveCompletion: { _ in
+            print("completed")
+        },
+        receiveValue: {result in
+            XCTAssertTrue(result.col == 2)
+            XCTAssertTrue(result.row == 0)
+        }).store(in: &cancellables)
 
+        sight.insert(bullet: firstBullet).sink(receiveCompletion: { _ in
+            print("completed")
+        },
+        receiveValue: {result in
+            XCTAssertTrue(result.col == 0)
+            XCTAssertTrue(result.row == 0)
+        }).store(in: &cancellables)
+
+        sight.applyPattern(EsfirPattern.first, from: (0,0)).sink(receiveCompletion: { _ in
+            print("completed")
+        },
+        receiveValue: { result in
+            print(result)
+        }).store(in: &cancellables)
+    }
 }

@@ -19,17 +19,19 @@
 		E143194F270DD5F500A2D947 /* GamePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CFCF87270C8283007A21AF /* GamePresenter.swift */; };
 		E1431953270DE86000A2D947 /* Pattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1431952270DE86000A2D947 /* Pattern.swift */; };
 		E1431955270DF04900A2D947 /* EsfirPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1431954270DF04900A2D947 /* EsfirPattern.swift */; };
+		E1C0D1CF27105834007C0D6C /* Bag.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CFCF7E270C7AAF007A21AF /* Bag.swift */; };
+		E1C0D1D027105834007C0D6C /* Sight.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10B9C3E270C571000130B90 /* Sight.swift */; };
+		E1C0D1D127105834007C0D6C /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CFCF8B270C843E007A21AF /* Player.swift */; };
+		E1C0D1D227105834007C0D6C /* GameEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CFCF89270C83EA007A21AF /* GameEngine.swift */; };
+		E1C0D1D327105834007C0D6C /* Pattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1431952270DE86000A2D947 /* Pattern.swift */; };
+		E1C0D1D427105834007C0D6C /* Bullet.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10B9C41270C57A500130B90 /* Bullet.swift */; };
+		E1C0D1D527105834007C0D6C /* EsfirPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1431954270DF04900A2D947 /* EsfirPattern.swift */; };
 		E1CFCF7B270C7461007A21AF /* SightTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CFCF7A270C7461007A21AF /* SightTests.swift */; };
-		E1CFCF7C270C748B007A21AF /* Bullet.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10B9C41270C57A500130B90 /* Bullet.swift */; };
-		E1CFCF7D270C75A0007A21AF /* Sight.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10B9C3E270C571000130B90 /* Sight.swift */; };
 		E1CFCF7F270C7AAF007A21AF /* Bag.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CFCF7E270C7AAF007A21AF /* Bag.swift */; };
 		E1CFCF84270C8181007A21AF /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CFCF83270C8181007A21AF /* BoardView.swift */; };
 		E1CFCF86270C8275007A21AF /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CFCF85270C8275007A21AF /* GameViewController.swift */; };
 		E1CFCF8A270C83EA007A21AF /* GameEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CFCF89270C83EA007A21AF /* GameEngine.swift */; };
 		E1CFCF8C270C843E007A21AF /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CFCF8B270C843E007A21AF /* Player.swift */; };
-		E1CFCF8D270C84BF007A21AF /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CFCF8B270C843E007A21AF /* Player.swift */; };
-		E1CFCF8E270C84C9007A21AF /* Bag.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CFCF7E270C7AAF007A21AF /* Bag.swift */; };
-		E1CFCF8F270C8535007A21AF /* GameEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CFCF89270C83EA007A21AF /* GameEngine.swift */; };
 		E1CFCF94270C93E5007A21AF /* BulletViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CFCF93270C93E5007A21AF /* BulletViewModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -365,12 +367,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				E10B9C26270C56F200130B90 /* BulletTests.swift in Sources */,
-				E1CFCF7D270C75A0007A21AF /* Sight.swift in Sources */,
-				E1CFCF8F270C8535007A21AF /* GameEngine.swift in Sources */,
+				E1C0D1D527105834007C0D6C /* EsfirPattern.swift in Sources */,
+				E1C0D1D227105834007C0D6C /* GameEngine.swift in Sources */,
+				E1C0D1D027105834007C0D6C /* Sight.swift in Sources */,
+				E1C0D1CF27105834007C0D6C /* Bag.swift in Sources */,
+				E1C0D1D127105834007C0D6C /* Player.swift in Sources */,
+				E1C0D1D327105834007C0D6C /* Pattern.swift in Sources */,
 				E1CFCF7B270C7461007A21AF /* SightTests.swift in Sources */,
-				E1CFCF8D270C84BF007A21AF /* Player.swift in Sources */,
-				E1CFCF8E270C84C9007A21AF /* Bag.swift in Sources */,
-				E1CFCF7C270C748B007A21AF /* Bullet.swift in Sources */,
+				E1C0D1D427105834007C0D6C /* Bullet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

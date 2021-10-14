@@ -24,3 +24,19 @@ struct PatternSpaceRequirement {
 protocol Pattern {
     var area: Board<PatternSpaceRequirement> { get }
 }
+
+extension Bullet {
+    func compatibleWith(pattern: PatternSpaceRequirement) -> Bool {
+        var isValid = true
+        if let patternColor = pattern.bulletType {
+            isValid = patternColor == self.color
+        }
+        if let patternValue = pattern.value {
+            isValid = patternValue == self.value
+        }
+        if let patternStar = pattern.starred {
+            isValid = patternStar == self.star
+        }
+        return isValid
+    }
+}
