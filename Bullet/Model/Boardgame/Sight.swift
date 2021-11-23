@@ -122,7 +122,7 @@ class Sight: Board<Bullet> {
                     guard let currentBullet = self[row,col], !requirement.mustBeEmpty else {
                         return 🔮(.failure(PatternError.patternNotAppliable))
                     }
-                    guard currentBullet.compatibleWith(pattern: requirement) else {
+                    guard currentBullet.isKindOf(patternSpace: requirement) else {
                         return 🔮(.failure(PatternError.patternNotAppliable))
                     }
                     if requirement.clearAtEnd {

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BB5C2B3F274D554000B6EF7D /* Esfir.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5C2B3E274D554000B6EF7D /* Esfir.swift */; };
 		E10B9C0F270C56EF00130B90 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10B9C0E270C56EF00130B90 /* AppDelegate.swift */; };
 		E10B9C11270C56EF00130B90 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10B9C10270C56EF00130B90 /* SceneDelegate.swift */; };
 		E10B9C15270C56F200130B90 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E10B9C14270C56F200130B90 /* Assets.xcassets */; };
@@ -53,6 +54,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BB5C2B3E274D554000B6EF7D /* Esfir.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Esfir.swift; sourceTree = "<group>"; };
 		E10B9C0B270C56EF00130B90 /* Bullet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bullet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E10B9C0E270C56EF00130B90 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E10B9C10270C56EF00130B90 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 				E10B9C41270C57A500130B90 /* Bullet.swift */,
 				E1CFCF7E270C7AAF007A21AF /* Bag.swift */,
 				E1CFCF8B270C843E007A21AF /* Player.swift */,
+				BB5C2B3E274D554000B6EF7D /* Esfir.swift */,
 				E1C0D1CC27104775007C0D6C /* Pattern */,
 			);
 			path = Boardgame;
@@ -351,6 +354,7 @@
 				E10B9C3F270C571000130B90 /* Sight.swift in Sources */,
 				E1431953270DE86000A2D947 /* Pattern.swift in Sources */,
 				E10B9C0F270C56EF00130B90 /* AppDelegate.swift in Sources */,
+				BB5C2B3F274D554000B6EF7D /* Esfir.swift in Sources */,
 				E10B9C42270C57A500130B90 /* Bullet.swift in Sources */,
 				E1431955270DF04900A2D947 /* EsfirPattern.swift in Sources */,
 				E1CFCF84270C8181007A21AF /* BoardView.swift in Sources */,

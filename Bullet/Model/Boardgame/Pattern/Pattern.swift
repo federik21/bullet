@@ -26,7 +26,7 @@ protocol Pattern {
 }
 
 extension Bullet {
-    func compatibleWith(pattern: PatternSpaceRequirement) -> Bool {
+    func isKindOf(patternSpace: PatternSpaceRequirement) -> Bool {
         var isValid = true
         if let patternColor = pattern.bulletType {
             isValid = patternColor == self.color

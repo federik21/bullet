@@ -5,10 +5,8 @@
 //  Created by Piccirilli Federico on 10/6/21.
 //
 
-enum EsfirPattern {
-    static let first: Pattern = EsfirPattern1()
-    static let second: Pattern = EsfirPattern2()
-    static let third: Pattern = EsfirPattern3()
+enum CharacterPatterns {
+    static let esfir: [Pattern] = [EsfirPattern1(), EsfirPattern2(), EsfirPattern3()]
 }
 
 // rxr

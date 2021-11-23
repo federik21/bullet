@@ -27,8 +27,13 @@ class GameEngine {
     var observable: [AnyCancellable] = []
 
     func addPlayer()  {
-        let player = Player(center: center)
-        self.player = player
+//        let player = Player()
+        for _ in 0...10 {
+            guard let drawBullet = center.drawBullet() else {
+                fatalError("Not enought bullet in center!")
+            }
+            player.bag.append(drawBullet)
+        }
     }
 
     func playerDraws() {
