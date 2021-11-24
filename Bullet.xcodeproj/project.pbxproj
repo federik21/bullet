@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		BB5C2B3F274D554000B6EF7D /* Esfir.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5C2B3E274D554000B6EF7D /* Esfir.swift */; };
 		BBA44C8E274E3C8C008A4D7A /* Esfir.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5C2B3E274D554000B6EF7D /* Esfir.swift */; };
+		BBA44C90274E5822008A4D7A /* PatternsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA44C8F274E5822008A4D7A /* PatternsView.swift */; };
+		BBA44C92274E6301008A4D7A /* PatternCellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA44C91274E6301008A4D7A /* PatternCellItem.swift */; };
+		BBA44C94274E6372008A4D7A /* PatternViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA44C93274E6372008A4D7A /* PatternViewModel.swift */; };
 		E10B9C0F270C56EF00130B90 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10B9C0E270C56EF00130B90 /* AppDelegate.swift */; };
 		E10B9C11270C56EF00130B90 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10B9C10270C56EF00130B90 /* SceneDelegate.swift */; };
 		E10B9C15270C56F200130B90 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E10B9C14270C56F200130B90 /* Assets.xcassets */; };
@@ -56,6 +59,9 @@
 
 /* Begin PBXFileReference section */
 		BB5C2B3E274D554000B6EF7D /* Esfir.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Esfir.swift; sourceTree = "<group>"; };
+		BBA44C8F274E5822008A4D7A /* PatternsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternsView.swift; sourceTree = "<group>"; };
+		BBA44C91274E6301008A4D7A /* PatternCellItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternCellItem.swift; sourceTree = "<group>"; };
+		BBA44C93274E6372008A4D7A /* PatternViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternViewModel.swift; sourceTree = "<group>"; };
 		E10B9C0B270C56EF00130B90 /* Bullet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bullet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E10B9C0E270C56EF00130B90 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E10B9C10270C56EF00130B90 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -222,6 +228,9 @@
 			children = (
 				E1CFCF85270C8275007A21AF /* GameViewController.swift */,
 				E1CFCF83270C8181007A21AF /* BoardView.swift */,
+				BBA44C8F274E5822008A4D7A /* PatternsView.swift */,
+				BBA44C91274E6301008A4D7A /* PatternCellItem.swift */,
+				BBA44C93274E6372008A4D7A /* PatternViewModel.swift */,
 				E1CFCF87270C8283007A21AF /* GamePresenter.swift */,
 				E1CFCF96270C9972007A21AF /* ViewModel */,
 			);
@@ -361,6 +370,7 @@
 				E1CFCF86270C8275007A21AF /* GameViewController.swift in Sources */,
 				E143194F270DD5F500A2D947 /* GamePresenter.swift in Sources */,
 				E10B9C3F270C571000130B90 /* Sight.swift in Sources */,
+				BBA44C94274E6372008A4D7A /* PatternViewModel.swift in Sources */,
 				E1431953270DE86000A2D947 /* Pattern.swift in Sources */,
 				E10B9C0F270C56EF00130B90 /* AppDelegate.swift in Sources */,
 				BB5C2B3F274D554000B6EF7D /* Esfir.swift in Sources */,
@@ -371,7 +381,9 @@
 				E1CFCF94270C93E5007A21AF /* BulletViewModel.swift in Sources */,
 				E1CFCF8A270C83EA007A21AF /* GameEngine.swift in Sources */,
 				E1CFCF8C270C843E007A21AF /* Player.swift in Sources */,
+				BBA44C92274E6301008A4D7A /* PatternCellItem.swift in Sources */,
 				E1CFCF7F270C7AAF007A21AF /* Bag.swift in Sources */,
+				BBA44C90274E5822008A4D7A /* PatternsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
