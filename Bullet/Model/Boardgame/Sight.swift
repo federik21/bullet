@@ -34,7 +34,7 @@ class Board<T>{
         return row >= 0 && row < rows && column >= 0 && column < columns
     }
 
-    subscript(row: Int, column: Int) -> T? {
+    subscript(column: Int, row: Int) -> T? {
         get {
             assert(indexIsValid(row: row, column: column), "Index out of range")
             return positions[(row * columns) + column]
@@ -55,6 +55,11 @@ class Board<T>{
 }
 
 class Sight: Board<Bullet> {
+    
+    init() {
+        super.init(rows: 6, columns: 5)
+    }
+    
     func insert(bullet: Bullet) -> Future<BulletResult, Error> {
         print("Inserting \(bullet)")
         return Future<BulletResult, Error> { [weak self] 🔮 in
@@ -65,7 +70,7 @@ class Sight: Board<Bullet> {
             var remainingSteps = bullet.value
             var currentRow = 0
             while remainingSteps > 0 && currentRow < self.rows {
-                if self[currentRow, column] == nil {
+                if self[column,currentRow] == nil {
                     remainingSteps -= 1
                 }
                 currentRow += 1
@@ -73,7 +78,7 @@ class Sight: Board<Bullet> {
             guard remainingSteps == 0 else {
                 return 🔮(.failure(SightError.playerHit))
             }
-            self[currentRow - 1, column] = bullet
+            self[column, currentRow - 1] = bullet
             return 🔮(.success(BulletResult(row: currentRow - 1, col: column, bullet: bullet)))
         }
     }

@@ -15,12 +15,13 @@ fileprivate struct EsfirPattern1: Pattern {
     var area: Board<PatternSpaceRequirement> = {
         let area = Board<PatternSpaceRequirement>(rows: 2, columns: 3)
         area[0,0] = PatternSpaceRequirement(bulletType: .red)
-        area[1,0] = PatternSpaceRequirement(mustBeEmpty: true)
-        area[2,0] = PatternSpaceRequirement(bulletType: .red)
+        area[0,1] = PatternSpaceRequirement(clearAtEnd: true)
 
-        area[1,0] = PatternSpaceRequirement(clearAtEnd: true)
+        area[1,0] = PatternSpaceRequirement(mustBeEmpty: true)
         area[1,1] = PatternSpaceRequirement(clearAtEnd: true)
-        area[1,2] = PatternSpaceRequirement(clearAtEnd: true)
+        
+        area[2,0] = PatternSpaceRequirement(bulletType: .red)
+        area[2,1] = PatternSpaceRequirement(clearAtEnd: true)
         return area
     }()
 }
@@ -33,16 +34,15 @@ fileprivate struct EsfirPattern2: Pattern {
         let area = Board<PatternSpaceRequirement>(rows: 3, columns: 3)
         area[0,0] = PatternSpaceRequirement(clearAtEnd: true)
 
-        area[1,0] = PatternSpaceRequirement(clearAtEnd: true)
+        area[0,1] = PatternSpaceRequirement(clearAtEnd: true)
         area[1,1] = PatternSpaceRequirement(mustBeEmpty: false)
 
-        area[2,0] = PatternSpaceRequirement(clearAtEnd: true)
-        area[2,1] = PatternSpaceRequirement(mustBeEmpty: false)
+        area[0,2] = PatternSpaceRequirement(clearAtEnd: true)
+        area[1,2] = PatternSpaceRequirement(mustBeEmpty: false)
         area[2,2] = PatternSpaceRequirement(mustBeEmpty: false)
         return area
     }()
 }
-
 
 // axa
 // -*-
@@ -51,11 +51,11 @@ fileprivate struct EsfirPattern3: Pattern {
     var area: Board<PatternSpaceRequirement> = {
         let area = Board<PatternSpaceRequirement>(rows: 3, columns: 3)
         area[0,0] = PatternSpaceRequirement(mustBeEmpty: false)
-        area[1,0] = PatternSpaceRequirement(mustBeEmpty: true)
-        area[2,0] = PatternSpaceRequirement(mustBeEmpty: false)
+        area[0,1] = PatternSpaceRequirement(mustBeEmpty: true)
+        area[0,2] = PatternSpaceRequirement(mustBeEmpty: false)
 
         area[1,1] = PatternSpaceRequirement(clearAtEnd: true)
-        area[2,0] = PatternSpaceRequirement(clearAtEnd: true)
+        area[0,2] = PatternSpaceRequirement(clearAtEnd: true)
         area[2,2] = PatternSpaceRequirement(clearAtEnd: true)
         return area
     }()

@@ -11,7 +11,7 @@ import Combine
 
 class SightTests: XCTestCase {
 
-    var sight: Sight = Sight(rows: 5, columns: 5)
+    var sight: Sight = Sight()
     var cancellables: [AnyCancellable] = []
 
     override func setUpWithError() throws {

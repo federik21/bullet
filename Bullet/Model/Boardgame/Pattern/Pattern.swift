@@ -28,13 +28,13 @@ protocol Pattern {
 extension Bullet {
     func isKindOf(patternSpace: PatternSpaceRequirement) -> Bool {
         var isValid = true
-        if let patternColor = pattern.bulletType {
+        if let patternColor = patternSpace.bulletType {
             isValid = patternColor == self.color
         }
-        if let patternValue = pattern.value {
+        if let patternValue = patternSpace.value {
             isValid = patternValue == self.value
         }
-        if let patternStar = pattern.starred {
+        if let patternStar = patternSpace.starred {
             isValid = patternStar == self.star
         }
         return isValid

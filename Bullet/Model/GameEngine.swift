@@ -27,12 +27,12 @@ class GameEngine {
     var observable: [AnyCancellable] = []
 
     func addPlayer()  {
-//        let player = Player()
+        player = Esfir()
         for _ in 0...10 {
             guard let drawBullet = center.drawBullet() else {
                 fatalError("Not enought bullet in center!")
             }
-            player.bag.append(drawBullet)
+            player.bag.addBullet(drawBullet)
         }
     }
 
@@ -67,9 +67,5 @@ class GameEngine {
         }
         intensityLevel += 1
         delegate?.engineReadyForNextRound()
-    }
-
-    func increaseIntensity() {
-
     }
 }

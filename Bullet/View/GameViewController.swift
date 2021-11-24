@@ -158,6 +158,8 @@ class GameViewController: UIViewController, GameView {
 
         drawButton.isEnabled = true
         nextButton.isEnabled = false
+        drawButton.alpha = 1.0
+        nextButton.alpha = 0.6
     }
 
     @objc func start() {
@@ -173,6 +175,8 @@ class GameViewController: UIViewController, GameView {
     }
 
     func playerDefeated() {
+        drawButton.alpha = 0.6
+        nextButton.alpha = 0.6
         drawButton.isEnabled = false
         nextButton.isEnabled = false
     }
@@ -180,6 +184,8 @@ class GameViewController: UIViewController, GameView {
     func roundEnd() {
         drawButton.isEnabled = false
         nextButton.isEnabled = true
+        drawButton.alpha = 0.6
+        nextButton.alpha = 1.0
     }
     
     @objc func nextRound() {
@@ -189,6 +195,8 @@ class GameViewController: UIViewController, GameView {
     func startNextRound() {
         drawButton.isEnabled = true
         nextButton.isEnabled = false
+        drawButton.alpha = 1.0
+        nextButton.alpha = 0.6
     }
 
     func updateIntensity(_ currIntensity: Int) {
