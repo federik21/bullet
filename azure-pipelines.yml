@@ -1,0 +1,5 @@
+pool:
+  vmImage: 'macos-latest'
+
+steps:
+  - script: swiftlint
